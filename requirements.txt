@@ -1,3 +1,4 @@
 streamlit==1.41.1
 wordcloud==1.9.5
 dotenv==0.9.9
+beautifulsoup4==4.14.3
