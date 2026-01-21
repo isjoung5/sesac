@@ -1,0 +1,4 @@
+streamlit==1.41.1
+finance-datareader==0.9.96
+mplfinance==0.12.10b0
+pandas==2.2.2
