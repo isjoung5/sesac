@@ -61,6 +61,7 @@ def wc_chart(corpus, back_mask, max_words, emp):
 
     wc = WordCloud(
         # font_path="C:/Windows/Fonts/malgun.ttf",
+        font_path="data/malgun.ttf",
         background_color="white",
         max_words=max_words,
         random_state=99,
