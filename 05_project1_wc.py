@@ -5,7 +5,7 @@ import json
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt 
-from wordcloud import wordcloud, STOPWORDS
+from wordcloud import WordCloud, STOPWORDS
 from PIL import Image 
 
 import streamlit as st 
@@ -54,7 +54,7 @@ def wc_chart(corpus, back_mask, max_words, emp):
     # 워드클라우드에 적용하기 위해 이미지를 배열로 변환
     my_mask = np.array(img)
 
-    wc = wordcloud(
+    wc = WordCloud(
         font_path="C:/Windows/Fonts/malgun.ttf",
         background_color="white",
         max_words=max_words,
