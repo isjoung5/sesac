@@ -48,19 +48,19 @@ def get_requests(query, display, start):
 # 문자열 텍스트, 배경 이미지, 최대 출력 단어수, empty 공간
 def wc_chart(corpus, back_mask, max_words, emp):
     if back_mask == "타원":
-        img = Image.open("../data/background_1.png")
+        img = Image.open("data/background_1.png")
     elif back_mask == "말풍선":
-        img = Image.open("../data/background_2.png")
+        img = Image.open("data/background_2.png")
     elif back_mask == "하트":
-        img = Image.open("../data/background_3.png")
+        img = Image.open("data/background_3.png")
     else:
-        img = Image.open("../data/background_0.png")
+        img = Image.open("data/background_0.png")
 
     # 워드클라우드에 적용하기 위해 이미지를 배열로 변환
     my_mask = np.array(img)
 
     wc = WordCloud(
-        font_path="C:/Windows/Fonts/malgun.ttf",
+        # font_path="C:/Windows/Fonts/malgun.ttf",
         background_color="white",
         max_words=max_words,
         random_state=99,
