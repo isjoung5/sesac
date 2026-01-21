@@ -15,7 +15,7 @@ import os
 
 # stopwords 설정 -------------------------------------------------------------------------
 # 1. 파일에서 스톱워드 읽어오기
-with open('../../data/stopwords.txt', 'r', encoding='utf-8') as f:
+with open('../data/stopwords.txt', 'r', encoding='utf-8') as f:
     # 줄바꿈 문자(\n) 제거 및 set으로 변환
     custom_stopwords = set(line.strip() for line in f)
 
