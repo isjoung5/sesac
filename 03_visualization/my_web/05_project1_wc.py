@@ -10,11 +10,12 @@ from PIL import Image
 
 import streamlit as st 
 
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
 import os 
 
 # stopwords 설정 -------------------------------------------------------------------------
 # 1. 파일에서 스톱워드 읽어오기
+# with open('../data/stopwords.txt', 'r', encoding='utf-8') as f:
 with open('data/stopwords.txt', 'r', encoding='utf-8') as f:
     # 줄바꿈 문자(\n) 제거 및 set으로 변환
     custom_stopwords = set(line.strip() for line in f)
@@ -23,9 +24,13 @@ with open('data/stopwords.txt', 'r', encoding='utf-8') as f:
 final_stopwords = set(STOPWORDS)
 final_stopwords.update(custom_stopwords)
 
-load_dotenv()
-client_id = os.getenv("NAVER_CLIENT_ID")
-client_secret = os.getenv("NAVER_CLIENT_SECRET")
+# load_dotenv()
+# client_id = os.getenv("NAVER_CLIENT_ID")
+# client_secret = os.getenv("NAVER_CLIENT_SECRET")
+# NAVER_CLIENT_ID=rM06oSKgxOg3ZP9Dtf8Z
+# NAVER_CLIENT_SECRET=RE2JjUXd3_
+client_id = "rM06oSKgxOg3ZP9Dtf8Z"
+client_secret = "RE2JjUXd3_"
 
 # 함수 설정 -------------------------------------------------------------------------
 # 네이버 검색 API를 활용한 뉴스 검색 결과를 반환해주는 함수
@@ -78,16 +83,16 @@ if "client_id" not in st.session_state:
 if "client_secret" not in st.session_state:
     st.session_state["client_secret"] = client_secret
 
-# 사이드바 설정 -------------------------------------------------------------------------
-with st.sidebar.form(key="form1", clear_on_submit=False):
-    st.header("네이버 API 설정")
-    client_id = st.text_input("Client ID:", value=st.session_state["client_id"])
-    client_secret = st.text_input("client Secret:", value=st.session_state["client_secret"], type="password")
+# # 사이드바 설정 -------------------------------------------------------------------------
+# with st.sidebar.form(key="form1", clear_on_submit=False):
+#     st.header("네이버 API 설정")
+#     client_id = st.text_input("Client ID:", value=st.session_state["client_id"])
+#     client_secret = st.text_input("client Secret:", value=st.session_state["client_secret"], type="password")
 
-    if st.form_submit_button(label="OK"):
-        st.session_state["client_id"] = client_id
-        st.session_state["client_secret"] = client_secret
-        st.write("설정 완료")
+#     if st.form_submit_button(label="OK"):
+#         st.session_state["client_id"] = client_id
+#         st.session_state["client_secret"] = client_secret
+#         st.write("설정 완료")
 
 # 메인화면 설정 -------------------------------------------------------------------------
 chart_emp = st.empty()
