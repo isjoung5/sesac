@@ -1,1 +1,5 @@
-
+st.title("타이틀 - 대")
+st.header("타이틀 - 중")
+st.subheader("타이틀 - 소")
+st.subheader("타이틀 - 소", divider=True)
+st.subheader("타이틀 - 소", divider="red")
